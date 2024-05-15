@@ -16,12 +16,12 @@ if [[ ${#GITHUB_USER} -eq 0 ]] ; then
     exit 3
 fi
 
-## Search for <username> and replace it with 
-find ${workspace} -type f -exec grep -l '<username>' {} \; | while read file
+## Search for Arunsrinivask and replace it with 
+find ${workspace} -type f -exec grep -l 'Arunsrinivask' {} \; | while read file
 do
     ## Let's ignore this script
     [[ ${file} == ${workspace}/.hack/update-repo-for-workshop.sh ]] && continue
-    sed -i "s/<username>/${GITHUB_USER}/g" ${file}
+    sed -i "s/Arunsrinivask/${GITHUB_USER}/g" ${file}
 done
 
 ## Now that the files are updated, we commit it and push it up. Best effort :cross_fingers_emoji:
